@@ -1,0 +1,1177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solving the Problem of Waste Disposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #253A82;
+            --highlight: #E3FC87;
+            --accent: #AB9DFF;
+            --bg: #C0E0FF;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            padding: 40px 20px;
+            color: #1e293b;
+            line-height: 1.82;
+        }
+        .container {
+            max-width: 1550px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 80px rgba(245, 86, 155, 0.15);
+        }
+        header {
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 9999px;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            color: var(--accent);
+            background: color-mix(in srgb, var(--accent), transparent 90%);
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 48px;
+            margin: 0 0 12px 0;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: #64748B;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            padding: 24px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        td {
+            padding: 35px 30px;
+            vertical-align: top;
+            border-bottom: 1px solid #F1F5F9;
+        }
+        .left {
+            width: 40%;
+            background: #FAFBFF;
+            border-right: 1px solid #F1F5F9;
+        }
+        .section-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .section-label {
+            display: inline-block;
+            font-weight: 900;
+            font-size: 18px;
+            color: var(--primary);
+            padding: 4px 16px;
+            background: color-mix(in srgb, var(--primary), transparent 90%);
+            border-radius: 9999px;
+            width: fit-content;
+        }
+        .section-content {
+            line-height: 1.85;
+            font-size: 16px;
+            color: #334155;
+            white-space: pre-wrap;
+        }
+        .right {
+            width: 60%;
+            background: #FFFBF8;
+        }
+        .highlight {
+            background-color: var(--highlight);
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .vocab-card {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+        .vocab-card:hover {
+            box-shadow: 0 8px 20px rgba(245, 86, 155, 0.12);
+            transform: translateY(-1px);
+        }
+        .vocab-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .vocab-word {
+            font-weight: 900;
+            font-size: 17px;
+            color: #0f172a;
+        }
+        .vocab-type {
+            color: var(--accent);
+            font-weight: 900;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+        .vocab-ipa {
+            color: #94a3b8;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+        }
+        .vocab-meaning-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .vocab-bar {
+            width: 4px;
+            height: 20px;
+            background-color: var(--primary);
+            border-radius: 99px;
+        }
+        .vocab-meaning {
+            color: #1e293b;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        footer {
+            padding: 60px;
+            text-align: center;
+            color: #94a3b8;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        @media (max-width: 1200px) {
+            .vocab-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 900px) {
+            .left, .right { width: 100%; display: block; border: none; }
+            td { padding: 25px; }
+            h1 { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="badge">IELTS Practice Test</div>
+            <h1>Solving the Problem of Waste Disposal</h1>
+            <div class="subtitle">Full Vocabulary Table</div>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th>Đoạn văn (với highlight từ vựng)</th>
+                    <th>Từ vựng & Nghĩa</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+      <tr class="row">
+        <td class="left">
+          <div class="section-container">
+            <span class="section-label">A.</span>
+            <div class="section-content">For many years, burning rubbish has been <span class="highlight">portray</span>ed as the lazy option when it comes to dealing with the problem of <span class="highlight">waste disposal</span>, since it sends <span class="highlight">toxic fumes</span> into the air and appears to support a <span class="highlight">consumerist</span>, <span class="highlight">throwaway society</span>. Norway, however, appears to be burning its way through a <span class="highlight">sizable</span> chunk of Europe's <span class="highlight">municipal</span> waste, using the heat created by this process to warm and power homes in many of its cities. Norway isn't alone: Germany, Sweden, Belgium and the Netherlands all burn significant quantities of rubbish, and across Europe there are 420 plants burning <span class="highlight">municipal</span> waste. With Europe dumping 150 million tonnes of rubbish into <span class="highlight">landfill</span> every year, there would seem to be a <span class="highlight">limitless</span> supply.</div>
+          </div>
+        </td>
+        <td class="right">
+          <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">portray</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/pɔːˈtreɪ/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">mi	u tả</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">waste disposal</strong>
+          <span class="vocab-type">(phr)</span>
+          <span class="vocab-ipa">/weɪst dɪˈspəʊzl/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">xử lý rác thải</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">toxic fumes</strong>
+          <span class="vocab-type">(phr)</span>
+          <span class="vocab-ipa">/ˈtɒksɪk fjuːmz/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">khí độc</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">consumerist</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/kənˈsjuːmərɪst/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">tiéu dùng quá mức</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">throwaway society</strong>
+          <span class="vocab-type">(phr)</span>
+          <span class="vocab-ipa">/ˈθrəʊəweɪ səˈsaɪəti/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">xã hội dùng rồi bỏ</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">sizable</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˈsaɪəbl/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">đáng kể</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">municipal</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/mjuːˈnɪ sɪ p l/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">thuộc thành phố</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">quantity</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈkwɒntəti/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">số lượng</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">landfill</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈlændfɪ l/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">bãi chôn lấp</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">limitless</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˈlɪ mɪ t ləs/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">vô hạn</span>
+        </div>
+      </div>
+    </div>
+        </td>
+      </tr>
+    
+      <tr class="row">
+        <td class="left">
+          <div class="section-container">
+            <span class="section-label">B.</span>
+            <div class="section-content">Those who support burning waste say that a new generation of <span class="highlight">incinerator</span>s has made it a more <span class="highlight">attractive</span> option. <span class="highlight">Filter</span>s and scrubbing <span class="highlight">mechanism</span>s now <span class="highlight">capture</span> <span class="highlight">harmful</span> <span class="highlight">substance</span>s such as mercury, hydrochloric acid and heavy metals. According to Ted Michaels, president of the US-based Energy Recovery Centre, 'There has been constant evolution in <span class="highlight">combustion</span> engineering and <span class="highlight">emission</span>s-control technology, and the <span class="highlight">output</span> from these facilities is now <span class="highlight">minuscule</span>.' Above all, however, supporters say incineration is the only way of <span class="highlight">prevent</span>ing the long-term <span class="highlight">impact</span>s of landfill. In ten years' time, says the World Bank, humans will be generating 2.2 billion tonnes of solid waste per year. <span class="highlight">Advocate</span>s see incineration as a <span class="highlight">practical</span> way to deal <span class="highlight">swiftly</span> with an immediate problem.</div>
+          </div>
+        </td>
+        <td class="right">
+          <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">incinerator</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ɪ nˈsɪ nəreɪ tə(r)/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">lò đốt rác</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">attractive</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/əˈtræktɪ v/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">hấp dẫn</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">filter</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈfɪ ltə(r)/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">bộ lọc</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">mechanism</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈmekənɪ zəm/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">cơ chế</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">capture</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/ˈkæptʃə(r)/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">giữ lại</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">harmful</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˈhɑːmfʊ l/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">có hại</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">substance</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈsəbstəns/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">chất</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">combustion</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/kəmˈbʊ stʃən/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">sự đốt cháy</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">emission</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/iˈmɪ ʃn/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">khí thải</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">output</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈaʊ tpʊ t/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">lượng thải</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">minuscule</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˈmɪ nəskjuːl/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">rất nhỏ</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">prevent</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/prɪˈvent/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">ngân chặn</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">impact</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈɪ mpækt/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">tác động</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">advocate</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈædvəkət/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">ngườ i ủng hộ</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">practical</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˈpræktɪ kl/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">thực tế</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">swiftly</strong>
+          <span class="vocab-type">(adv)</span>
+          <span class="vocab-ipa">/ˈswɪ ftli/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">nhanh chóng</span>
+        </div>
+      </div>
+    </div>
+        </td>
+      </tr>
+    
+      <tr class="row">
+        <td class="left">
+          <div class="section-container">
+            <span class="section-label">C.</span>
+            <div class="section-content">Levels of waste <span class="highlight">generation</span> <span class="highlight">vary</span> hugely around the world. 'It's a problem for the <span class="highlight">developed nations</span>,' says Joergen Fenhann, a senior scientist working with the UN Environment Programme in Denmark. 'The more you develop, the more you produce, buy and throw away.' But the growth of incineration hasn't been <span class="highlight">universally</span> welcomed. Lars Haltbrekken, chairman of Friends of the Earth in Norway, is <span class="highlight">concerned</span> that incineration plants appear to <span class="highlight">generate demand</span> for their services. 'The problem in Norway,' he explains, 'is that we have built too many waste-burning factories. So we've ended up <span class="highlight">import</span>ing waste from other countries. If you look at this in a very small <span class="highlight">perspective</span>, it is, of course, better for the climate to burn rubbish from the UK rather than leave it in landfill there,' he continues. 'But in a <span class="highlight">broader</span> <span class="highlight">perspective</span>, it's a lazy way of getting rid of waste; you don't <span class="highlight">stimulate</span> the goals of reducing, reusing and recycling.'</div>
+          </div>
+        </td>
+        <td class="right">
+          <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">generation</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˌdʒenəˈreɪʃn/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">sự tạo ra</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">vary</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/ˈveəri/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">thay đổi</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">developed nations</strong>
+          <span class="vocab-type">(phr)</span>
+          <span class="vocab-ipa">/dɪˈveləpt ˈneɪʃnz/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">nước phát triển</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">universally</strong>
+          <span class="vocab-type">(adv)</span>
+          <span class="vocab-ipa">/ˌjuːnɪˈvɜːsəli/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">toàn cầu</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">concerned</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/kənˈsɜːnd/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">lo ngại</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">generate demand</strong>
+          <span class="vocab-type">(phr)</span>
+          <span class="vocab-ipa">/ˈdʒenəreɪ t dɪˈmɑːnd/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">tạo nhu cầu</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">import</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/ɪ mˈpɔːt/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">nhập khẩu</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">perspective</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/pəˈspektɪ v/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">quan điểm</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">broader</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˈbrɔːdə(r)/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">rộng hơn</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">stimulate</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/ˈstɪ mjuleɪ t/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">thúc đẩy</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">recycle</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/ˌriːˈsaɪ kl/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">tái chế</span>
+        </div>
+      </div>
+    </div>
+        </td>
+      </tr>
+    
+      <tr class="row">
+        <td class="left">
+          <div class="section-container">
+            <span class="section-label">D.</span>
+            <div class="section-content">Incineration is also <span class="highlight">at odds with</span> EU <span class="highlight">policy</span>, which promotes a 'recycling <span class="highlight">hierarchy</span>': ideally, we simply produce less waste in the first place; failing that, we <span class="highlight">reuse</span> objects more; the next step is recycling; only then should we consider incineration, while dumping in landfill is the last <span class="highlight">resort</span>. Dealing with the problem of waste disposal involves tracing the whole process that took the material from its <span class="highlight">inception</span> to landfill. We used to call this the 'cradle to grave' <span class="highlight">life cycle</span>; now, the talk is of 'cradle to cradle' and an even more <span class="highlight">comprehensive</span> concept known as 'zero waste'. 'The <span class="highlight">philosophy</span> of cradle to cradle is about designing products that are actually good for the environment at the end of their life,' says Joan Marc Simon, European spokesman for the environmental movement GAIA. 'You design a bottle that contains no <span class="highlight">toxin</span>s, is fully <span class="highlight">recyclable</span> and requires the minimum amount of energy to be produced.' As Simon points out, however, without the right mechanisms in place 'nothing <span class="highlight">guarantee</span>s that this bottle will end up being properly collected and treated in the appropriate recycling <span class="highlight">facility</span>'.</div>
+          </div>
+        </td>
+        <td class="right">
+          <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">at odds with</strong>
+          <span class="vocab-type">(phr)</span>
+          <span class="vocab-ipa">/æt ɒdz wɪð/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">trái vớ i</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">policy</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈpɒləsi/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">chính sách</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">hierarchy</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈhaɪərɑːki/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">thứ bậc</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">reuse</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/ˌriːˈjuːz/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">tái sử dụng</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">resort</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/rɪˈzɔːt/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">biện pháp cuối</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">trace</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/treɪ s/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">theo dõi</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">inception</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ɪ nˈsepʃn/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">khối đầu</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">life cycle</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈlaɪ f saɪ kl/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">vòng đờ i</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">comprehensive</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˌkɒmprɪˈhensɪ v/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">toàn diện</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">philosophy</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/fəˈlɒsəfi/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">triế t lý</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">toxin</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈtɒksɪ n/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">chất độc</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">recyclable</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˌriːˈsaɪ kləbl/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">có thể tái chế</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">guarantee</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/ˌɡærənˈtiː/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">đảm bảo</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">facility</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/fəˈsɪ ləti/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">cơ sở xử lý</span>
+        </div>
+      </div>
+    </div>
+        </td>
+      </tr>
+    
+      <tr class="row">
+        <td class="left">
+          <div class="section-container">
+            <span class="section-label">E.</span>
+            <div class="section-content">Tim Burns, policy manager at Keep Britain Tidy, says, 'In the UK alone, people <span class="highlight">waste</span> £10 billion of food every year. You can argue about <span class="highlight">composting</span> that, or not buying it in the first place — if you do that, then that's money the <span class="highlight">retailer</span>s don't get, so it's not always <span class="highlight">clear-cut</span>.' The <span class="highlight">implication</span>s of zero <span class="highlight">waste</span> are that we're going to have to take a good long look at those <span class="highlight">well-stocked</span> supermarket shelves, too. 'Supermarkets keep their shelves stocked even when <span class="highlight">demand</span> isn't there, which means they have to pay to <span class="highlight">dispose of</span> a lot of food,' says Burns. 'But that cost is less to them than the cost in <span class="highlight">brand damage</span> of having empty shelves.'</div>
+          </div>
+        </td>
+        <td class="right">
+          <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">waste</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/weɪst/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">lãng phí</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">composting</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈkɒmpɒstɪŋ/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">ủ phân</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">retailer</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈriːteɪ lə(r)/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">nhà bán lẻ</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">clear-cut</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˌklɪə ˈkʊ t/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">rõ ràng</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">implication</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˌɪ mplɪˈkeɪʃn/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">hệ quả</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">well-stocked</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˌwel ˈstɒkt/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">đầy hàng</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">demand</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/dɪˈmɑːnd/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">nhu cầu</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">dispose of</strong>
+          <span class="vocab-type">(phr)</span>
+          <span class="vocab-ipa">/dɪˈspəʊ z əv/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">loại bỏ</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">brand damage</strong>
+          <span class="vocab-type">(phr)</span>
+          <span class="vocab-ipa">/brænd ˈdæmɪ dʒ/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">tổn hại thương hiệu</span>
+        </div>
+      </div>
+    </div>
+        </td>
+      </tr>
+    
+      <tr class="row">
+        <td class="left">
+          <div class="section-container">
+            <span class="section-label">F.</span>
+            <div class="section-content">Recent history and changes in <span class="highlight">trend</span>s in recycling suggest that we should be prepared for <span class="highlight">unexpected</span> <span class="highlight">development</span>s. 'If someone back in the 1980s had suggested what waste would be like now, they would be completely wrong,' says Richard Fisher, a PhD researcher at Cranfield University. '<span class="highlight">Consumerism</span> has developed at a <span class="highlight">pace</span> we never expected. Nobody would have said there would be so much <span class="highlight">electronic waste</span>. But recycling has grown, too — ten years ago nobody would have <span class="highlight">predict</span>ed today's levels of recycling.' But he points out that the need to <span class="highlight">reduce</span> waste is still a difficult message to sell to consumers. He suggests that what people are really <span class="highlight">concerned about</span> is their loved ones and the future they face. 'Perhaps we can <span class="highlight">align</span> the environmental message to these <span class="highlight">deep-seated</span> values,' he says. 'We need to look at whether it's business that drives consumers or the other way around. You need government to play a <span class="highlight">leadership</span> role, whereas countries such as the UK seem to be stepping away from the environment in <span class="highlight">pursuit</span> of <span class="highlight">short-term</span> economic goals.'</div>
+          </div>
+        </td>
+        <td class="right">
+          <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">trend</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/trend/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">xu hướng</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">unexpected</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˌʈnɪ kˈspektɪ d/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">bất ngờ</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">development</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/dɪˈveləpmənt/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">sự phát triển</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">consumerism</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/kənˈsjuːmərɪ zəm/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">chủ nghĩa tiéu dùng</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">pace</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/peɪ s/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">tốc độ</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">electronic waste</strong>
+          <span class="vocab-type">(phr)</span>
+          <span class="vocab-ipa">/ɪ ˌlekˈtrɒnɪ k weɪst/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">rác điện tử</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">predict</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/prɪˈdɪ kt/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">dự đoán</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">reduce</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/rɪˈdjuːs/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">giảm</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">concerned about</strong>
+          <span class="vocab-type">(phr)</span>
+          <span class="vocab-ipa">/kənˈsɜːnd əˈbaʊ t/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">quan tâm</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">align</strong>
+          <span class="vocab-type">(v)</span>
+          <span class="vocab-ipa">/əˈlaɪ n/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">lién kết</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">deep-seated</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˌdiːp ˈsiːtɪ d/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">ăn sâu</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">leadership</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/ˈliːdəʃɪ p/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">vai trò lãnh đạo</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">pursuit</strong>
+          <span class="vocab-type">(n)</span>
+          <span class="vocab-ipa">/pəˈsjuːt/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">theo đuội</span>
+        </div>
+      </div>
+    
+      <div class="vocab-card">
+        <div class="vocab-header">
+          <strong class="vocab-word">short-term</strong>
+          <span class="vocab-type">(adj)</span>
+          <span class="vocab-ipa">/ˌʃɔːt ˈtɜːm/</span>
+        </div>
+        <div class="vocab-meaning-container">
+          <div class="vocab-bar"></div>
+          <span class="vocab-meaning">ngắn hạn</span>
+        </div>
+      </div>
+    </div>
+        </td>
+      </tr>
+    
+            </tbody>
+        </table>
+        <footer>
+            Sưu tập và tổng hợp: Uyên học tiếng
+        </footer>
+    </div>
+</body>
+</html>
+  
